@@ -1,0 +1,35 @@
+const trafficLight = document.getElementById("traffic-light");
+
+function changeColor() {
+  if (trafficLight.className === "red") {
+    trafficLight.className = "green";
+  } else if (trafficLight.className === "yellow") {
+    trafficLight.className = "red";
+  } else {
+    trafficLight.className = "yellow";
+  }
+}
+
+setInterval(changeColor, 10000);
+
+
+This code uses the setInterval method to call the changeColor function every 10,000 milliseconds (10 seconds). The changeColor function checks the current class name of the traffic light element and changes it to the next class name in the sequence (red -> green -> yellow -> red).
+
+It is supposed that your HTML file contain a div element with an id of "traffic-light" and has classes red,green and yellow defined in css.
+
+
+<div id="traffic-light" class="red"></div>
+
+
+And in your CSS file:
+
+
+#traffic-light.red {
+  background-color: red;
+}
+#traffic-light.yellow {
+  background-color: yellow;
+}
+#traffic-light.green {
+  background-color: green;
+}
